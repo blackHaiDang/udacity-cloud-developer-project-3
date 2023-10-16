@@ -57,10 +57,10 @@ jobs:
       - image: ubuntu-1604:202007-01
     steps:
       - checkout
+      - login
       - install
       - build
       - tag
-      - login
       - push
 
 workflows:
