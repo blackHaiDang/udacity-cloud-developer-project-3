@@ -47,11 +47,20 @@ commands:
             docker push theblackdang/udagram-frontend:$TAG
             docker push theblackdang/udagram-api-user:$TAG
             docker push theblackdang/reverseproxy:$TAG
-workflows:
-  default:
-    jobs:
+
+jobs:
+  all:
+    docker:
+      - image: cimg/base:2023.06
+    steps:
       - install
       - build
       - tag
       - login
       - push
+
+workflows:
+  default:
+    jobs:
+      - all
+      
