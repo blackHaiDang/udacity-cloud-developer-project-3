@@ -1,0 +1,49 @@
+﻿version: 2.1
+
+commands:
+  install:
+    description: Echo message
+    steps:
+      - run:
+          name: Print message
+          command: |
+            echo "nothing needs to be installed"
+  build:
+    description: Build docker images
+    steps:
+      - run:
+          name: Build 4 images in this project
+          command: |
+            docker build -t udagram-api-feed .././udagram-api-feed
+            docker build -t udagram-frontend .././udagram-frontend
+            docker build -t udagram-api-user .././udagram-api-user
+            docker build -t reverseproxy .././udagram-reverseproxy
+  tag:
+    description: Tag images
+    steps:
+      - run:
+          name: Tag 4 images being built in previous step
+          command: |
+            $TAG="udacity"
+            docker tag udagram-api-feed theblackdang/udagram-api-feed:$TAG
+            docker tag udagram-frontend theblackdang/udagram-frontend:$TAG
+            docker tag udagram-api-user theblackdang/udagram-api-user:$TAG
+            docker tag reverseproxy theblackdang/reverseproxy:$TAG
+  login:
+    description: Login
+    steps:
+      - run:
+          name: Login as theblackdang
+          command: |
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+  push:
+    description:  Push images
+    steps:
+      - run:
+          name: Push 4 images
+          command: |
+            docker push theblackdang/udagram-api-feed:$TAG
+            docker push theblackdang/udagram-frontend:$TAG
+            docker push theblackdang/udagram-api-user:$TAG
+            docker push theblackdang/reverseproxy:$TAG
