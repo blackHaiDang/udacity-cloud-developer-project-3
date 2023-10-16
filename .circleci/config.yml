@@ -53,7 +53,7 @@ commands:
 jobs:
   all:
     docker:
-      - image: node_js:13
+      - image: cimg/node:lts
     steps:
       - checkout
       - install
