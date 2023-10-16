@@ -54,7 +54,7 @@ commands:
 jobs:
   all:
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: ubuntu-1604:202007-01
     steps:
       - checkout
       - install
