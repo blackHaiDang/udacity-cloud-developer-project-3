@@ -51,19 +51,43 @@ commands:
             docker push theblackdang/reverseproxy:$TAG
 
 jobs:
-  all:
+  install:
     docker:
       - image: cimg/node:lts
     steps:
       - checkout
       - install
+  login:
+    docker:
+      - image: cimg/python:3.11.4
+    steps:
+      - checkout
       - login
+  build:
+    docker:
+      - image: cimg/python:3.11.4
+    steps:
+      - checkout
       - build
-      - tag
+  tag:
+    docker:
+      - image: cimg/python:3.11.4
+    steps:
+      - checkout
+      - build
+  push:
+    docker:
+      - image: cimg/python:3.11.4
+    steps:
+      - checkout
       - push
 
 workflows:
   default:
     jobs:
-      - all
+      - install
+      - login
+      - build
+      - tag
+      - push
       
