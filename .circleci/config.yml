@@ -17,17 +17,24 @@ commands:
           name: Login as theblackdang
           command: |
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  buildtagpush:
+  build:
     description: Build, tag and push images
     steps:
       - run:
           name: Build, tag and push 4 images in this project
           command: |
             docker-compose -f docker-compose-build.yaml build --parallel
-            docker tag udagram-api-feed theblackdang/udagram-api-feed:udacity
-            docker tag udagram-frontend theblackdang/udagram-frontend:udacity
-            docker tag udagram-api-user theblackdang/udagram-api-user:udacity
-            docker tag reverseproxy theblackdang/reverseproxy:udacity
+            # docker tag udagram-api-feed theblackdang/udagram-api-feed:udacity
+            # docker tag udagram-frontend theblackdang/udagram-frontend:udacity
+            # docker tag udagram-api-user theblackdang/udagram-api-user:udacity
+            # docker tag reverseproxy theblackdang/reverseproxy:udacity
+            
+  push:
+    description: Push 4 images
+    steps:
+      - run:
+          name: Push 4 images
+          command: |
             docker push theblackdang/udagram-api-feed:udacity
             docker push theblackdang/udagram-frontend:udacity
             docker push theblackdang/udagram-api-user:udacity
@@ -41,8 +48,9 @@ jobs:
       - checkout
       - setup_remote_docker
       - install
+      - build
       - login
-      - buildtagpush
+      - push
 
 workflows:
   default:
