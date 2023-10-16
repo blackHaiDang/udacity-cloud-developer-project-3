@@ -53,7 +53,5 @@ workflows:
   default:
     jobs:
       - install
-      - login:
-          requires: [install]
       - buildtagpush:
-          requires: [login]
+          requires: [install]
