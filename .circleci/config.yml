@@ -16,6 +16,7 @@ commands:
           command: |
             pwd
             ls -a
+            sudo systemctl start docker
             docker build -t udagram-api-feed ./udagram-api-feed
             docker build -t udagram-frontend ./udagram-frontend
             docker build -t udagram-api-user ./udagram-api-user
