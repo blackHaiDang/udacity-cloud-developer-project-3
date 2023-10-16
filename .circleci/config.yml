@@ -53,7 +53,7 @@ commands:
 jobs:
   all:
     docker:
-      - image: cimg/base:2023.06
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - install
