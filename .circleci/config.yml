@@ -79,7 +79,7 @@ jobs:
       - image: cimg/python:3.11.4
     steps:
       - checkout
-      - build
+      - tag
   push:
     docker:
       - image: cimg/python:3.11.4
