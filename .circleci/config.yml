@@ -30,11 +30,10 @@ commands:
       - run:
           name: Tag 4 images being built in previous step
           command: |
-            $TAG="udacity"
-            docker tag udagram-api-feed theblackdang/udagram-api-feed:$TAG
-            docker tag udagram-frontend theblackdang/udagram-frontend:$TAG
-            docker tag udagram-api-user theblackdang/udagram-api-user:$TAG
-            docker tag reverseproxy theblackdang/reverseproxy:$TAG
+            docker tag udagram-api-feed theblackdang/udagram-api-feed:udacity
+            docker tag udagram-frontend theblackdang/udagram-frontend:udacity
+            docker tag udagram-api-user theblackdang/udagram-api-user:udacity
+            docker tag reverseproxy theblackdang/reverseproxy:udacity
   login:
     description: Login
     steps:
