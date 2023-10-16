@@ -61,7 +61,6 @@ jobs:
     steps:
       - checkout
       - install
-      - setup_remote_docker
   login:
     docker:
       - image: cimg/python:3.11.4
@@ -73,6 +72,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - setup_remote_docker
       - build
   tag:
     docker:
