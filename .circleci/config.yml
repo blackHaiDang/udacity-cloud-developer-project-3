@@ -65,7 +65,7 @@ jobs:
       - login
   build:
     docker:
-      - image: bayesimpact/circleci
+      - image: cimg/base:stable
     steps:
       - checkout
       - build
