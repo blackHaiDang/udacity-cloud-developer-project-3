@@ -55,6 +55,7 @@ jobs:
     docker:
       - image: cimg/base:2023.06
     steps:
+      - checkout
       - install
       - build
       - tag
