@@ -34,31 +34,17 @@ commands:
             docker push theblackdang/reverseproxy:udacity
 
 jobs:
-  install:
-    docker:
-      - image: cimg/node:lts
-    steps:
-      - checkout
-      - install
-  login:
-    docker:
-      - image: cimg/python:3.11.4
-    steps:
-      - checkout
-      - login
-  buildtagpush:
+  allinone:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - setup_remote_docker
+      - install
+      - login
       - buildtagpush
 
 workflows:
   default:
     jobs:
-      - install
-      - login:
-          requires: [install]
-      - buildtagpush:
-          requires: [login]
+      - allinone
