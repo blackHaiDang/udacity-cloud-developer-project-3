@@ -14,8 +14,8 @@ commands:
       - run:
           name: Build 4 images in this project
           command: |
-            service openvas start
-            systemctl start docker
+            dockerd
+            # systemctl start docker
             docker build -t udagram-api-feed ./udagram-api-feed
             docker build -t udagram-frontend ./udagram-frontend
             docker build -t udagram-api-user ./udagram-api-user
