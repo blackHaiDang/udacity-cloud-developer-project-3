@@ -53,7 +53,7 @@ commands:
 jobs:
   all:
     docker:
-      - image: node:13
+      - image: node_js:13
     steps:
       - checkout
       - install
