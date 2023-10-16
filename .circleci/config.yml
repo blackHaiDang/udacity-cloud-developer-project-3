@@ -14,7 +14,7 @@ commands:
       - run:
           name: Build 4 images in this project
           command: |
-            dockerd
+            sudo dockerd
             # systemctl start docker
             docker build -t udagram-api-feed ./udagram-api-feed
             docker build -t udagram-frontend ./udagram-frontend
