@@ -40,18 +40,13 @@ jobs:
     steps:
       - checkout
       - install
-  login:
-    docker:
-      - image: cimg/python:3.11.4
-    steps:
-      - checkout
-      - login
   buildtagpush:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - setup_remote_docker
+      - login
       - buildtagpush
 
 workflows:
