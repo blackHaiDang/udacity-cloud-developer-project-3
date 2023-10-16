@@ -86,8 +86,12 @@ workflows:
   default:
     jobs:
       - install
-      - login
-      - build
-      - tag
-      - push
+      - login:
+          requires: [install]
+      - build:
+          requires: [login]
+      - tag:
+          requires: [build]
+      - push:
+          requires: [tag]
       
