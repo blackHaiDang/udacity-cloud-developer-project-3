@@ -47,3 +47,11 @@ commands:
             docker push theblackdang/udagram-frontend:$TAG
             docker push theblackdang/udagram-api-user:$TAG
             docker push theblackdang/reverseproxy:$TAG
+workflows:
+  default:
+    jobs:
+      - install
+      - build
+      - tag
+      - login
+      - push
