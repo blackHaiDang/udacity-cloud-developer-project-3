@@ -16,7 +16,7 @@ commands:
       - run:
           name: Build 4 images in this project
           command: |
-            sudo dockerd
+            # sudo dockerd
             # systemctl start docker
             docker-compose -f docker-compose-build.yaml build --parallel
             docker-compose up
