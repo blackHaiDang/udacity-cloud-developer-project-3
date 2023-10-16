@@ -54,7 +54,7 @@ commands:
 jobs:
   all:
     docker:
-      - image: ubuntu-1604:202007-01
+      - image: ubuntu-2004:202201-02
     steps:
       - checkout
       - login
