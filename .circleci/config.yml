@@ -7,7 +7,7 @@ commands:
       - run:
           name: Install
           command: |
-              "Install something..."
+              echo "Install something..."
   build:
     description: Build docker images
     steps:
