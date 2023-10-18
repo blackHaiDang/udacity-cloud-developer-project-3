@@ -22,35 +22,3 @@ spec:
               cpu: 500m
             requests:
               cpu: 250m
-          env:
-          - name: URL
-            valueFrom:
-              configMapKeyRef:
-                name: env-config
-                key: URL 
-          - name: JWT_SECRET
-            valueFrom:
-              configMapKeyRef:
-                name: env-config
-                key: JWT_SECRET
-          - name: POSTGRESS_DB
-            valueFrom:
-              configMapKeyRef:
-                name: env-config
-                key: POSTGRESS_DB
-          - name: POSTGRESS_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: env-config
-                key: POSTGRESS_HOST
-          - name: POSTGRESS_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: env-secret
-                key: POSTGRESS_PASSWORD
-          - name: POSTGRESS_USERNAME
-            valueFrom:
-              secretKeyRef:
-                name: env-secret
-                key: POSTGRESS_USERNAME
-      restartPolicy: Always
