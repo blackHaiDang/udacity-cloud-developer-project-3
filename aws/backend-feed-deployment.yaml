@@ -1,0 +1,24 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-feed
+spec:
+  selector:
+    matchLabels:
+      service: backend-feed
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: backend-feed
+    spec:
+      containers:
+        - name: backend-feed
+          image: theblackdang/udagram-api-feed:udacity
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 800m
+            requests:
+              cpu: 500m

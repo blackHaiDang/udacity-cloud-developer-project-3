@@ -1,0 +1,24 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+spec:
+  selector:
+    matchLabels:
+      service: backend-user
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        service: backend-user
+    spec:
+      containers:
+        - name: backend-user
+          image: theblackdang/udagram-api-user:udacity
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 250m
