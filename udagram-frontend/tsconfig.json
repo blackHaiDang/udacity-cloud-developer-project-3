@@ -20,6 +20,10 @@
     ],
     "skipLibCheck": true
   },
+  "angularCompilerOptions": {
+    // ...
+    "disableTypeScriptVersionCheck": true
+  },
   "exclude": [
     "node_modules",
     "typings"
