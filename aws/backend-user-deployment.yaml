@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-user
-          image: theblackdang/udagram-api-user:udagram-api-user
+          image: theblackdang/udagram-api-user:udacity
           ports:
             - containerPort: 80
           resources:
