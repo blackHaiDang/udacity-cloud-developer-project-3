@@ -24,6 +24,11 @@ commands:
           name: Build, tag and push 4 images in this project
           command: |
             source set_env.sh
+            echo $POSTGRES_USERNAME
+            echo $POSTGRES_PASSWORD
+            echo $POSTGRES_HOST
+            echo $POSTGRES_DB
+            echo $URL
             docker-compose config
             docker-compose -f docker-compose-build.yaml build --parallel
             docker tag udagram-api-feed theblackdang/udagram-api-feed:udacity
