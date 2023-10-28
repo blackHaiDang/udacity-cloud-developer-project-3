@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: theblackdang/udagram-api-feed:udacity
+          image: theblackdang/udagram-api-feed:udagram-api-feed
           ports:
             - containerPort: 80
           resources:

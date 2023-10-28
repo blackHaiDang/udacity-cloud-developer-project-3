@@ -8,4 +8,4 @@ export AWS_BUCKET=udacity-project3-cloud-developer
 export AWS_REGION=us-east-1
 export AWS_PROFILE=role-user
 export JWT_SECRET=testing
-export URL=postgres.cw9a3mp3kerk.us-east-1.rds.amazonaws.com
+export URL=http://aa5f268da1a424872a12d8cd06c041de-1570222605.us-east-1.elb.amazonaws.com:8100
