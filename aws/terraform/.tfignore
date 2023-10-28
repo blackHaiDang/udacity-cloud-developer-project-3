@@ -1,5 +1,0 @@
-﻿*.exe
-*.hcl
-*.tfstate
-
-\.terraform

@@ -2,7 +2,7 @@
 kind: ConfigMap
 data:
   AWS_BUCKET: udacity-project3-cloud-developer
-  AWS_PROFILE: admin
+  AWS_PROFILE: role-user
   AWS_REGION: us-east-1
   JWT_SECRET: test
   POSTGRES_DB: postgres

@@ -34,6 +34,10 @@ resource "aws_eks_cluster" "project3_eks_cluster" {
       aws_subnet.public-us-east-1b.id
     ]
   }
+  
+  tags = {
+    KubernetesCluster = "project3_eks_cluster"
+  }
 
   depends_on = [aws_iam_role_policy_attachment.project3-AmazonEKSClusterPolicy]
 }
